@@ -7,3 +7,5 @@ def element_at(my_list, idx):
         if idx == cur_idx:
             return i
         cur_idx += 1
+    else:
+        return None
