@@ -5,4 +5,4 @@ def uppercase(str):
             upper_char = ord(i) - ord('a') + ord('A')
         else:
             upper_char = i
-        print("{:c}".format(i))
+    print("{:c}".format(i))
