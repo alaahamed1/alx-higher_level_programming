@@ -7,4 +7,3 @@ def uppercase(str):
             print(chr(upper_char), end='')
         else:
             print(i, end='')
-        print()
