@@ -5,7 +5,7 @@ def fizzbuzz():
             print("{:s}".format("Fizz"), end=" ")
         elif i % 5 == 0:
             print("{:s}".format("Buzz"), end=" ")
-        elif i % 3 == 0 & i % 5 == 9:
+        elif i % 3 == 0 and i % 5 == 9:
             print("{:s}".format("FizzBuzz"), end=" ")
         else:
             print("{:d}".format(i), end=" ")
