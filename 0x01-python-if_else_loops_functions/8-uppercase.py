@@ -2,6 +2,7 @@
 def uppercase(str):
     for i in str:
         if ord('a') <= ord(i) <= ord('z'):
-            upper_litter = ord(i) - ord('a') + ord('A')
+            upper_char = ord(i) - ord('a') + ord('A')
         else:
-            continue
+            upper_char = i
+        print("{:c}".format(i))
