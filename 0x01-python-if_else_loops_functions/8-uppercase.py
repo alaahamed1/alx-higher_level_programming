@@ -4,7 +4,7 @@ def uppercase(str):
     for i in str:
         if 97 <= ord(i) <= 122:
             upper_char = ord(i) - 97 + 65
+            print(chr(upper_char), end='')
         else:
-            upper_char = i
-    result +=upper_char
-    print("{:s}".format(upper_char))
+            print(i, end='')
+        print()
