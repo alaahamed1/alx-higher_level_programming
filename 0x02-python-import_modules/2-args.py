@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import sys
-script_name = sys.argv[0]
+if __name__ == "__main__":
+    script_name = sys.argv[0]
 arguments = sys.argv[1:]
 if len(sys.argv) == 1:
     print("0 arguments.")
