@@ -8,7 +8,7 @@ if len(sys.argv) == 1:
 elif len(sys.argv) == 2:
     print(f"{len(sys.argv) - 1}", "argument:")
     for index in (sys.argv[1:]):
-        print(f"{len(sys.argv) - 1}", sys.argv[1])
+        print(f"{len(sys.argv) - 1}:", sys.argv[1])
 else:
     print(f"{len(sys.argv) - 1} arguments:")
     for index, arg in enumerate(arguments, 1):
