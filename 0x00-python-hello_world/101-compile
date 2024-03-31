@@ -1,0 +1,13 @@
+import compileall
+import sys
+
+def compile_python_file(file_path):
+    compileall.compile_file(file_path, force=True)
+
+if __name__ == "__main__":
+    if len(sys.argv) != 2:
+        print("Usage: python compile_script.py <file_path>")
+        sys.exit(1)
+
+    file_path = sys.argv[1]
+    compile_python_file(file_path)
