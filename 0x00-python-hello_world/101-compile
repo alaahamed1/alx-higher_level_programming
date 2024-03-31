@@ -1,17 +1,24 @@
 #!/bin/bash
+
 pyfile="$PYFILE"
+
 if [ -z "$pyfile" ]; then
     echo "Error: Please set the PYFILE environment variable with the Python file path."
     exit 1
 fi
+
 if [ ! -f "$pyfile" ]; then
     echo "Error: Python file '$pyfile' not found."
     exit 1
 fi
+
 echo "Compiling $pyfile ..."
-python -m compileall -f "$pyfile" || {
-    echo "Compilation failed."
-    exit 1
-}
+python -m compileall -f "$pyfile"
+
+if [ ! -f "$pycfile" ]; then
+  echo "Compilation failed (no bytecode file generated)."
+  exit 1
+fi
+
 pycfile="${pyfile%.py}c"
 echo "Python file compiled successfully: $pycfile"
