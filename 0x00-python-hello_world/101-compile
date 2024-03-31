@@ -1,26 +1,16 @@
-#!/usr/bin/python3
-import os
-import compileall
-import sys
+#!/bin/bash
 
-def compile_python_file(file_path):
-    compileall.compile_file(file_path, force=True)
+pyfile="$PYFILE"
 
-if __name__ == "__main__":
-    pyfile_path = os.getenv("PYFILE")
+if [ ! -f "$pyfile" ]; then
+    echo "Error: Python file '$pyfile' not found."
+    exit 1
+fi
 
-    if not pyfile_path:
-        print("Error: Environment variable $PYFILE is not set.")
-        sys.exit(1)
+python -m compileall -f "$pyfile" || {
+    echo "Compilation failed."
+    exit 1
+}
+pycfile="${pyfile%.py}c"
 
-    if not os.path.isfile(pyfile_path):
-        print(f"Error: Python file '{pyfile_path}' not found.")
-        sys.exit(1)
-
-    base_name, ext = os.path.splitext(pyfile_path)
-
-    compile_python_file(pyfile_path)
-
-    compiled_file_path = base_name + "c"
-
-    print(f"Compiled Python file: {pyfile_path} -> {compiled_file_path}")
+echo "Python file compiled successfully: $pycfile"
