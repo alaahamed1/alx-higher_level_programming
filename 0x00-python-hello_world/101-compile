@@ -21,4 +21,3 @@ python -m compileall -f "$pyfile" || {
 pycfile="${pyfile%.py}c"
 
 echo "Python file compiled successfully: $pycfile"
-
