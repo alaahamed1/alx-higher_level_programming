@@ -4,7 +4,7 @@ def safe_print_division(a, b):
         res = a / b
         return res
     except ZeroDivisionError:
-        print("Inside result: ", None)
+        print("Inside result:", None)
         return None
     finally:
         if 'res' in locals():
