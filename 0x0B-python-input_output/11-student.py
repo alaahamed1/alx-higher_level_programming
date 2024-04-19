@@ -13,14 +13,16 @@ class Student:
         self.last_name = last_name,
         self.age = age
     def to_json(self, attrs=None):
+        
         if attrs is None:
             return self.__dict__
         else:
-            return {attr: getattr(self, attr) 
+            return {attr: getattr(self, attr)
                     for attr in attrs if hasattr(self, attr)}
 
     def reload_from_json(self, json):
         '''replaces all attributes of the Student instance:
         You can assume json will always be a dictionary'''
-        for key, value in json.items():
-            setattr(self, key, value)
+        for key in json:
+            if hasattr(self, key):
+                setattr(self, key, json[key])
