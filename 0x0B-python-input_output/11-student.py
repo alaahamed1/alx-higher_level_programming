@@ -20,8 +20,11 @@ class Student:
         if attrs is None:
             return self.__dict__
         else:
-            return {attr: getattr(self, attr)
-                    for attr in attrs if hasattr(self, attr)}
+            my_dict = dict()
+            for attr in attrs:
+                if attr in self.__dict__:
+                    my_dict[attr] = self.__dict__[attr]
+            return my_dict
 
     def reload_from_json(self, json):
         '''replaces all attributes of the Student instance:
