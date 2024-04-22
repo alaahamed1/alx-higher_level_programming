@@ -5,6 +5,6 @@
 class Square:
     '''empty class'''
     pass
-    def __init__(self, _size):
+    def __init__(self, __size):
         '''Private instance attribute: size'''
-        self._size = _size
+        self.__size = __size
