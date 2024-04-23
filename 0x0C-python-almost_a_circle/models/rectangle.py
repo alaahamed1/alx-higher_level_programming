@@ -12,6 +12,14 @@ class Rectangle(Base):
         self.height = height
         self.x = x
         self.y = y
+        
+    def validation(self, value, name, q=True):
+        if not isinstance(value, int):
+            raise TypeError("{} must be an integer".format(name))
+        if value < 0 and q:
+            raise ValueError('{} must be >= 0'.format(name))
+        if value <= 0 and not q:
+            raise ValueError('{} must be > 0'.format(name))
 
     @property
     def width(self):
