@@ -14,6 +14,7 @@ class Rectangle(Base):
         self.y = y
         
     def validation(self, value, name, q=True):
+        '''Raise Error if value not a positive int'''
         if not isinstance(value, int):
             raise TypeError("{} must be an integer".format(name))
         if value < 0 and q:
