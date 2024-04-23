@@ -1,16 +1,16 @@
 #!/usr/bin/python3
-'''class base'''
+'''Model of the base class'''
 
 
 class Base:
-    '''private class attribute __nb_objects = 0'''
-
+    '''The base class of all of the classes in this project'''
     __nb_objects = 0
 
     def __init__(self, id=None):
-        '''class constructo'''
+        '''Instantiating the id incase id != none
+        otherwise and increament nb_objects'''
         if id is not None:
-            id = id
+            self.id = id
         else:
             Base.__nb_objects += 1
-            self.id = Base.__nb_objects
+            self.id = self.__nb_objects
