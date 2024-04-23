@@ -6,7 +6,7 @@ class Square:
     '''class with Private instance attribute: size'''
     pass
 
-    def __init__(self, size = 0):
+    def __init__(self, size=0):
         '''Instantiation with size optional
         Args:
             size (int): the size of the aquare, must be >= 0'''
