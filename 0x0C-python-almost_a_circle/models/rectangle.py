@@ -13,7 +13,7 @@ class Rectangle(Base):
         self.x = x
         self.y = y
 
-    def __validation(self, value, name, q=True):
+    def __validation(self, name, value, q=True):
         '''Raise Error if value not a positive int'''
         if type(value) is not int:
             raise TypeError("{} must be an integer".format(name))
