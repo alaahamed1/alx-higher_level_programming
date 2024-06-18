@@ -1,10 +1,10 @@
 #!/usr/bin/node
-const arg = parseInt(process.argv[2]);
-  function factorial(n) {
-    if (!n || n === 1) {
-      return 1;
-    } else {
-      return n * factorial(n - 1);
-    }
+const n = parseInt(process.argv[2]);
+function factorial (a) {
+  if (!a || a === 1) {
+    return 1;
+  } else {
+    return a * factorial(a - 1);
   }
-console.log(factorial(arg));
+}
+console.log(factorial(n));
