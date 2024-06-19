@@ -4,9 +4,9 @@ if (isNaN(argv)) {
   console.log('Missing size');
 } else {
   for (let i = 0; i < argv; i++) {
-    let row = "";
+    let row = '';
     for (let j = 0; j < argv; j++) {
-      row += "X";
+      row += 'X';
     }
     console.log(row);
   }
