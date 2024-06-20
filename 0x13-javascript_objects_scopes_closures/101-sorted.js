@@ -8,9 +8,9 @@ for (const UserId in dict) {
   const occurrences = dict[UserId];
 
   if (!(occurrences in newDict)) {
- newDict[occurrences] = [];
+    newDict[occurrences] = [];
   }
 
- newDict[occurrences].push(UserId);
+  newDict[occurrences].push(UserId);
 }
-console.log (newDict);
+console.log(newDict);
